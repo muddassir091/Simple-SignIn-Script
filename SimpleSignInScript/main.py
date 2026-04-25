@@ -1,3 +1,5 @@
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
 username = input("Create a username: ")
 if len(username) < 4:
     print("Username must be atleast 4 characters long!")
@@ -11,6 +13,9 @@ if len(password) < 8:
 pin = input("Create a pin: ")
 if len(pin) != 6:
     print("Pin must be 6 digits long!")
+    exit()
+if any(char in letters for char in pin):
+    print("pin cannot contain letters!")
     exit()
 
 print("************************Please Sign in**************************")
